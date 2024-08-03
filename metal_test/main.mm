@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
     
-    MTL::Device* device = MTL::CreateSystemDefaultDevice();
+    //MTL::Device* device = MTL::CreateSystemDefaultDevice();
     std::cout << "Hello, World!\n";
     
     MTLEngine engine;

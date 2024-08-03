@@ -27,4 +27,4 @@ private:
     CAMetalLayer* metalLayer;
     
     
-}
+};

@@ -6,7 +6,7 @@ void MTLEngine::init(){
 }
 
 void MTLEngine::run(){
-    while(glfwWindowShouldClose(glfwWindow))
+    while(!glfwWindowShouldClose(glfwWindow))
     {
         glfwPollEvents();
     }
