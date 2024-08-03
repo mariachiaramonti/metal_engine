@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD137CCB2C5EB4EA00E750BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD137CCA2C5EB4EA00E750BA /* main.cpp */; };
+		AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD137CCA2C5EB4EA00E750BA /* main.mm */; };
+		AD137CD32C5EB58C00E750BA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CD22C5EB58C00E750BA /* Metal.framework */; };
+		AD137CD52C5EB59400E750BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CD42C5EB59400E750BA /* Foundation.framework */; };
+		AD137CD72C5EB5A800E750BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CD62C5EB5A800E750BA /* QuartzCore.framework */; };
+		AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */; };
+		AD137CDB2C5EB9BC00E750BA /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */; };
+		AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +30,14 @@
 
 /* Begin PBXFileReference section */
 		AD137CC72C5EB4EA00E750BA /* metal_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_test; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD137CCA2C5EB4EA00E750BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AD137CCA2C5EB4EA00E750BA /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		AD137CD22C5EB58C00E750BA /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		AD137CD42C5EB59400E750BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AD137CD62C5EB5A800E750BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mtl_implementation.cpp; sourceTree = "<group>"; };
+		AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = ../../../../usr/local/Cellar/glfw/3.4/lib/libglfw.3.4.dylib; sourceTree = "<group>"; };
+		AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mtl_engine.mm; sourceTree = "<group>"; };
+		AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mtl_engine.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD137CDB2C5EB9BC00E750BA /* libglfw.3.4.dylib in Frameworks */,
+				AD137CD72C5EB5A800E750BA /* QuartzCore.framework in Frameworks */,
+				AD137CD52C5EB59400E750BA /* Foundation.framework in Frameworks */,
+				AD137CD32C5EB58C00E750BA /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +60,7 @@
 			children = (
 				AD137CC92C5EB4EA00E750BA /* metal_test */,
 				AD137CC82C5EB4EA00E750BA /* Products */,
+				AD137CD12C5EB58C00E750BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +75,23 @@
 		AD137CC92C5EB4EA00E750BA /* metal_test */ = {
 			isa = PBXGroup;
 			children = (
-				AD137CCA2C5EB4EA00E750BA /* main.cpp */,
+				AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */,
+				AD137CCA2C5EB4EA00E750BA /* main.mm */,
+				AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */,
+				AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */,
 			);
 			path = metal_test;
+			sourceTree = "<group>";
+		};
+		AD137CD12C5EB58C00E750BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */,
+				AD137CD62C5EB5A800E750BA /* QuartzCore.framework */,
+				AD137CD42C5EB59400E750BA /* Foundation.framework */,
+				AD137CD22C5EB58C00E750BA /* Metal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD137CCB2C5EB4EA00E750BA /* main.cpp in Sources */,
+				AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */,
+				AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */,
+				AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +272,19 @@
 		AD137CCF2C5EB4EA00E750BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67VJSXL835;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/mariamonti/dev/metal-cpp",
+					/usr/local/Cellar/glfw/3.4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.4/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,9 +292,19 @@
 		AD137CD02C5EB4EA00E750BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67VJSXL835;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/mariamonti/dev/metal-cpp",
+					/usr/local/Cellar/glfw/3.4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.4/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

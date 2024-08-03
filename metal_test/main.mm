@@ -6,9 +6,19 @@
 //
 
 #include <iostream>
+#include <Metal/Metal.hpp>
+#include "mtl_engine.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+    MTL::Device* device = MTL::CreateSystemDefaultDevice();
     std::cout << "Hello, World!\n";
+    
+    MTLEngine engine;
+    engine.init();
+    engine.run();
+    engine.cleanup();
+    
     return 0;
 }
