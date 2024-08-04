@@ -14,6 +14,7 @@
 		AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */; };
 		AD137CDB2C5EB9BC00E750BA /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */; };
 		AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */; };
+		AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD36EE7F2C6015EA009DCF32 /* triangle.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = ../../../../usr/local/Cellar/glfw/3.4/lib/libglfw.3.4.dylib; sourceTree = "<group>"; };
 		AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mtl_engine.mm; sourceTree = "<group>"; };
 		AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mtl_engine.hpp; sourceTree = "<group>"; };
+		AD36EE7F2C6015EA009DCF32 /* triangle.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = triangle.metal; sourceTree = "<group>"; };
 		AD7A24462C5ED8C800E26684 /* metal_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_test.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				AD137CCA2C5EB4EA00E750BA /* main.mm */,
 				AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */,
 				AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */,
+				AD36EE7F2C6015EA009DCF32 /* triangle.metal */,
 			);
 			path = metal_test;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */,
+				AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */,
 				AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */,
 				AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */,
 			);
