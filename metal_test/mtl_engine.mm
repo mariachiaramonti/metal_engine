@@ -41,12 +41,20 @@ void MTLEngine::initWindow(){
         exit(EXIT_FAILURE);
     }
     
+    int width, height;
+    glfwGetFramebufferSize(glfwWindow, &width, &height);
+    
     metalWindow = glfwGetCocoaWindow(glfwWindow);
     metalLayer =  [CAMetalLayer layer];
     metalLayer.device = (__bridge id<MTLDevice>)metalDevice;
     metalLayer.pixelFormat = MTLPixelFormatBGRA8Unorm;
+    metalLayer.drawableSize = CGSizeMake(width, height);
     metalWindow.contentView.layer = metalLayer;
     metalWindow.contentView.wantsLayer = YES;
+    
+    glfwSetWindowUserPointer(glfwWindow, this);
+    glfwSetFramebufferSizeCallback(glfwWindow, framebufferSizeCallback);
+    
     
 }
 
