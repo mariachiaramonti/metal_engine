@@ -15,6 +15,9 @@
 		AD137CDB2C5EB9BC00E750BA /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */; };
 		AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */; };
 		AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD36EE7F2C6015EA009DCF32 /* triangle.metal */; };
+		AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD44015B2C8B6DF800E3004E /* texture.cpp */; };
+		AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD4401562C8B6DAE00E3004E /* stbi_image.cpp */; };
+		AD4401622C8B735000E3004E /* square.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD4401612C8B735000E3004E /* square.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +43,17 @@
 		AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mtl_engine.mm; sourceTree = "<group>"; };
 		AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mtl_engine.hpp; sourceTree = "<group>"; };
 		AD36EE7F2C6015EA009DCF32 /* triangle.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = triangle.metal; sourceTree = "<group>"; };
+		AD4401552C8B6DAE00E3004E /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		AD4401562C8B6DAE00E3004E /* stbi_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stbi_image.cpp; sourceTree = "<group>"; };
+		AD44015A2C8B6DE000E3004E /* texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
+		AD44015B2C8B6DF800E3004E /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		AD44015E2C8B717E00E3004E /* VertexData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexData.hpp; sourceTree = "<group>"; };
+		AD44015F2C8B728F00E3004E /* mc_grass.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mc_grass.jpeg; sourceTree = "<group>"; };
+		AD4401612C8B735000E3004E /* square.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = square.metal; sourceTree = "<group>"; };
 		AD7A24462C5ED8C800E26684 /* metal_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_test.entitlements; sourceTree = "<group>"; };
+		ADE61D092C7200C000AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
+		ADE61D0B2C7203AA00AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
+		ADE61D0D2C72044100AF7398 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = external/stb/stb_image.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +74,11 @@
 		AD137CBE2C5EB4EA00E750BA = {
 			isa = PBXGroup;
 			children = (
+				AD4401602C8B728F00E3004E /* assets */,
+				AD4401582C8B6DAE00E3004E /* external */,
+				ADE61D0D2C72044100AF7398 /* stb_image.h */,
+				ADE61D092C7200C000AF7398 /* stbi_image.cpp */,
+				ADE61D0B2C7203AA00AF7398 /* stbi_image.cpp */,
 				AD137CC92C5EB4EA00E750BA /* metal_test */,
 				AD137CC82C5EB4EA00E750BA /* Products */,
 				AD137CD12C5EB58C00E750BA /* Frameworks */,
@@ -78,12 +96,16 @@
 		AD137CC92C5EB4EA00E750BA /* metal_test */ = {
 			isa = PBXGroup;
 			children = (
+				AD44015B2C8B6DF800E3004E /* texture.cpp */,
+				AD44015A2C8B6DE000E3004E /* texture.hpp */,
 				AD7A24462C5ED8C800E26684 /* metal_test.entitlements */,
 				AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */,
 				AD137CCA2C5EB4EA00E750BA /* main.mm */,
 				AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */,
 				AD137CDE2C5EBA5200E750BA /* mtl_engine.hpp */,
 				AD36EE7F2C6015EA009DCF32 /* triangle.metal */,
+				AD44015E2C8B717E00E3004E /* VertexData.hpp */,
+				AD4401612C8B735000E3004E /* square.metal */,
 			);
 			path = metal_test;
 			sourceTree = "<group>";
@@ -97,6 +119,31 @@
 				AD137CD22C5EB58C00E750BA /* Metal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD4401572C8B6DAE00E3004E /* stb */ = {
+			isa = PBXGroup;
+			children = (
+				AD4401552C8B6DAE00E3004E /* stb_image.h */,
+				AD4401562C8B6DAE00E3004E /* stbi_image.cpp */,
+			);
+			path = stb;
+			sourceTree = "<group>";
+		};
+		AD4401582C8B6DAE00E3004E /* external */ = {
+			isa = PBXGroup;
+			children = (
+				AD4401572C8B6DAE00E3004E /* stb */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		AD4401602C8B728F00E3004E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD44015F2C8B728F00E3004E /* mc_grass.jpeg */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4401622C8B735000E3004E /* square.metal in Sources */,
+				AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */,
 				AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */,
 				AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */,
+				AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */,
 				AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */,
 				AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */,
 			);
@@ -287,11 +337,13 @@
 				HEADER_SEARCH_PATHS = (
 					"/Users/mariamonti/dev/metal-cpp",
 					/usr/local/Cellar/glfw/3.4/include,
+					external,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.4/lib,
 				);
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -308,11 +360,13 @@
 				HEADER_SEARCH_PATHS = (
 					"/Users/mariamonti/dev/metal-cpp",
 					/usr/local/Cellar/glfw/3.4/include,
+					external,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.4/lib,
 				);
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
