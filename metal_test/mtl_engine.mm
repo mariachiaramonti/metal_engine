@@ -31,6 +31,17 @@ void MTLEngine::initDevice(){
     metalDevice = MTL::CreateSystemDefaultDevice();
 }
 
+void MTLEngine::frameBufferSizeCallback(GLFWwindow *window, int width, int height)
+{
+    MTLEngine* engine = (MTLEngine*)glfwGetWindowUserPointer(window);
+    engine->resizeFrameBuffer(width, height);
+}
+
+void MTLEngine::resizeFrameBuffer(int width, int height)
+{
+    metalLayer.drawableSize = CGSizeMake(width, height);
+}
+
 void MTLEngine::initWindow(){
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
@@ -53,7 +64,7 @@ void MTLEngine::initWindow(){
     metalWindow.contentView.wantsLayer = YES;
     
     glfwSetWindowUserPointer(glfwWindow, this);
-    glfwSetFramebufferSizeCallback(glfwWindow, framebufferSizeCallback);
+    glfwSetFramebufferSizeCallback(glfwWindow, frameBufferSizeCallback);
     
     
 }
@@ -63,7 +74,7 @@ void MTLEngine::createTriangle()
     simd::float3 triangleVertices[] = {
         {-0.5f, -0.5f, 0.0f},
         {0.5f, -0.5f, 0.0f},
-        {0.5f, 0.5f, 0.0f}
+        {0.0f, 0.5f, 0.0f}
     };
     
     triangleVertexBuffer = metalDevice->newBuffer(&triangleVertices, sizeof(triangleVertices), MTL::ResourceStorageModeShared);

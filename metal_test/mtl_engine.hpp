@@ -32,7 +32,7 @@ private:
     void sendRenderCommand();
     void draw();
     
-    static void framebufferSizeCallback(GLFWwindow *window, int width, int height);
+    static void frameBufferSizeCallback(GLFWwindow *window, int width, int height);
     void resizeFrameBuffer(int width, int height);
     
     MTL::Device* metalDevice;
