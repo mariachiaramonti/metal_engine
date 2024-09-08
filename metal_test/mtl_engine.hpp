@@ -13,7 +13,7 @@
 
 #include <simd/simd.h>
 #include "VertexData.hpp"
-#include "Texture.hpp"
+#include "texture.hpp"
 #include <stb/stb_image.h>
 #include <filesystem>
 

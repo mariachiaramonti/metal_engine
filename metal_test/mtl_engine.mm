@@ -5,7 +5,8 @@ void MTLEngine::init(){
     initDevice();
     initWindow();
     
-    createTriangle();
+    //createTriangle();
+    createSquare();
     createDefaultLibrary();
     createCommandQueue();
     createRenderPipeline();

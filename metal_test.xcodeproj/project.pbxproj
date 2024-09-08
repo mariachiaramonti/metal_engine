@@ -14,10 +14,10 @@
 		AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD137CD82C5EB5D100E750BA /* mtl_implementation.cpp */; };
 		AD137CDB2C5EB9BC00E750BA /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD137CDA2C5EB9BC00E750BA /* libglfw.3.4.dylib */; };
 		AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD137CDC2C5EBA3F00E750BA /* mtl_engine.mm */; };
-		AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD36EE7F2C6015EA009DCF32 /* triangle.metal */; };
+		AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD36EE7F2C6015EA009DCF32 /* triangle.metal */; settings = {COMPILER_FLAGS = "-v"; }; };
 		AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD44015B2C8B6DF800E3004E /* texture.cpp */; };
 		AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD4401562C8B6DAE00E3004E /* stbi_image.cpp */; };
-		AD4401622C8B735000E3004E /* square.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD4401612C8B735000E3004E /* square.metal */; };
+		AD4401622C8B735000E3004E /* square.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD4401612C8B735000E3004E /* square.metal */; settings = {COMPILER_FLAGS = "-v"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -343,7 +343,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.4/lib,
 				);
-				MTL_COMPILER_FLAGS = "-fcikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel -v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -366,7 +366,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.4/lib,
 				);
-				MTL_COMPILER_FLAGS = "-fcikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel -v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
