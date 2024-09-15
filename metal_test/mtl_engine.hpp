@@ -16,6 +16,7 @@
 #include "texture.hpp"
 #include <stb/stb_image.h>
 #include <filesystem>
+#include "AAPLMathUtilities.h"
 
 class MTLEngine {
 public:
@@ -29,9 +30,17 @@ private:
     
     void createSquare();
     void createTriangle();
+    void createCube();
+    void createBuffers();
+    
     void createDefaultLibrary();
     void createCommandQueue();
     void createRenderPipeline();
+    
+    void createDepthAndMSAATextures();
+    void createRenderPassDescriptor();
+    
+    void updateRenderPassDescriptor();
     
     void encodeRenderCommand(MTL::RenderCommandEncoder* renderEncoder);
     void sendRenderCommand();
@@ -52,7 +61,14 @@ private:
     MTL::RenderPipelineState* metalRenderPS0;
     MTL::Buffer* triangleVertexBuffer;
     MTL::Buffer* squareVertexBuffer;
+    MTL::Buffer* cubeVertexBuffer;
+    MTL::Buffer* transformationBuffer;
     
     Texture* grassTexture;
     
+    MTL::DepthStencilState* depthStencilState;
+    MTL::RenderPassDescriptor* renderPassDescriptor;
+    MTL::Texture* msaaRenderTargetTexture = nullptr;
+    MTL::Texture* depthTexture;
+    int sampleCount = 4;
 };

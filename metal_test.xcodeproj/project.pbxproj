@@ -18,6 +18,8 @@
 		AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD44015B2C8B6DF800E3004E /* texture.cpp */; };
 		AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD4401562C8B6DAE00E3004E /* stbi_image.cpp */; };
 		AD4401622C8B735000E3004E /* square.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD4401612C8B735000E3004E /* square.metal */; settings = {COMPILER_FLAGS = "-v"; }; };
+		AD4401652C9456EA00E3004E /* AAPLMathUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD4401632C9456EA00E3004E /* AAPLMathUtilities.cpp */; };
+		AD4401672C94599600E3004E /* cube.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD4401662C94599600E3004E /* cube.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,9 @@
 		AD44015E2C8B717E00E3004E /* VertexData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexData.hpp; sourceTree = "<group>"; };
 		AD44015F2C8B728F00E3004E /* mc_grass.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mc_grass.jpeg; sourceTree = "<group>"; };
 		AD4401612C8B735000E3004E /* square.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = square.metal; sourceTree = "<group>"; };
+		AD4401632C9456EA00E3004E /* AAPLMathUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPLMathUtilities.cpp; sourceTree = "<group>"; };
+		AD4401642C9456EA00E3004E /* AAPLMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMathUtilities.h; sourceTree = "<group>"; };
+		AD4401662C94599600E3004E /* cube.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = cube.metal; sourceTree = "<group>"; };
 		AD7A24462C5ED8C800E26684 /* metal_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_test.entitlements; sourceTree = "<group>"; };
 		ADE61D092C7200C000AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
 		ADE61D0B2C7203AA00AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
@@ -96,6 +101,8 @@
 		AD137CC92C5EB4EA00E750BA /* metal_test */ = {
 			isa = PBXGroup;
 			children = (
+				AD4401632C9456EA00E3004E /* AAPLMathUtilities.cpp */,
+				AD4401642C9456EA00E3004E /* AAPLMathUtilities.h */,
 				AD44015B2C8B6DF800E3004E /* texture.cpp */,
 				AD44015A2C8B6DE000E3004E /* texture.hpp */,
 				AD7A24462C5ED8C800E26684 /* metal_test.entitlements */,
@@ -106,6 +113,7 @@
 				AD36EE7F2C6015EA009DCF32 /* triangle.metal */,
 				AD44015E2C8B717E00E3004E /* VertexData.hpp */,
 				AD4401612C8B735000E3004E /* square.metal */,
+				AD4401662C94599600E3004E /* cube.metal */,
 			);
 			path = metal_test;
 			sourceTree = "<group>";
@@ -205,8 +213,10 @@
 			files = (
 				AD4401622C8B735000E3004E /* square.metal in Sources */,
 				AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */,
+				AD4401652C9456EA00E3004E /* AAPLMathUtilities.cpp in Sources */,
 				AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */,
 				AD36EE802C6015EA009DCF32 /* triangle.metal in Sources */,
+				AD4401672C94599600E3004E /* cube.metal in Sources */,
 				AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */,
 				AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */,
 				AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */,

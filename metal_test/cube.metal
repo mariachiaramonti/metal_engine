@@ -17,16 +17,17 @@ struct VertexOut
     float2 textureCoordinate;
 };
 
-vertex VertexOut squareVertexShader(uint vertexID [[vertex_id]],
-                              constant VertexData* vertexData)
+vertex VertexOut vertexShader(uint vertexID [[vertex_id]],
+                              constant VertexData* vertexData,
+                              constant TransformationData* transformationData)
 {
     VertexOut out;
-    out.position = vertexData[vertexID].position;
+    out.position = transformationData->perspectiveMatrix * transformationData->viewMatrix * transformationData->modelMatrix * vertexData[vertexID].position;
     out.textureCoordinate = vertexData[vertexID].textureCoordinate;
     return out;
 }
 
-fragment float4 squareFragmentShader(VertexOut in [[stage_in]],
+fragment float4 fragmentShader(VertexOut in [[stage_in]],
                                texture2d<float> colorTexture [[texture(0)]])
 {
     constexpr sampler textureSampler (mag_filter::linear,
