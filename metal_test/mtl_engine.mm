@@ -76,6 +76,8 @@ void MTLEngine::initWindow(){
         exit(EXIT_FAILURE);
     }
     
+    glfwSetWindowUserPointer(glfwWindow, this);
+    glfwSetFramebufferSizeCallback(glfwWindow, frameBufferSizeCallback);
     int width, height;
     glfwGetFramebufferSize(glfwWindow, &width, &height);
     
@@ -86,9 +88,6 @@ void MTLEngine::initWindow(){
     metalLayer.drawableSize = CGSizeMake(width, height);
     metalWindow.contentView.layer = metalLayer;
     metalWindow.contentView.wantsLayer = YES;
-    
-    glfwSetWindowUserPointer(glfwWindow, this);
-    glfwSetFramebufferSizeCallback(glfwWindow, frameBufferSizeCallback);
     
     metalDrawable = (__bridge CA::MetalDrawable*)[metalLayer nextDrawable];
     
@@ -177,9 +176,9 @@ void MTLEngine::createCube()
         };
     
     cubeVertexBuffer = metalDevice->newBuffer(&cubeVertices, sizeof(cubeVertices), MTL::ResourceStorageModeShared);
-    transformationBuffer = metalDevice->newBuffer(sizeof(TransformationData), MTL::ResourceStorageModeShared);
+    //transformationBuffer = metalDevice->newBuffer(sizeof(TransformationData), MTL::ResourceStorageModeShared);
     
-    grassTexture = new Texture("assets/mc_grass.jpeg", metalDevice);
+    grassTexture = new Texture("assets/halo_odst_microsoft_image.jpeg", metalDevice);
 }
 
 void MTLEngine::createBuffers(){
@@ -211,7 +210,7 @@ void MTLEngine::createRenderPipeline()
     assert(fragmentShader);
     
     MTL::RenderPipelineDescriptor* renderPipelineDescriptor = MTL::RenderPipelineDescriptor::alloc()->init();
-    renderPipelineDescriptor->setLabel(NS::String::string("Triangle Rendering Pipeline", NS::ASCIIStringEncoding));
+    //renderPipelineDescriptor->setLabel(NS::String::string("Triangle Rendering Pipeline", NS::ASCIIStringEncoding));
     renderPipelineDescriptor->setVertexFunction(vertexShader);
     renderPipelineDescriptor->setFragmentFunction(fragmentShader);
     assert(renderPipelineDescriptor);
@@ -231,6 +230,7 @@ void MTLEngine::createRenderPipeline()
     
     MTL::DepthStencilDescriptor* depthStencilDescriptor = MTL::DepthStencilDescriptor::alloc()->init();
     depthStencilDescriptor->setDepthCompareFunction(MTL::CompareFunctionLessEqual);
+    depthStencilDescriptor->setDepthWriteEnabled(true);
     depthStencilState = metalDevice->newDepthStencilState(depthStencilDescriptor);
     
     renderPipelineDescriptor->release();
@@ -247,7 +247,7 @@ void MTLEngine::createDepthAndMSAATextures()
     msaaTextureDescriptor->setHeight(metalLayer.drawableSize.height);
     msaaTextureDescriptor->setSampleCount(sampleCount);
     msaaTextureDescriptor->setUsage(MTL::TextureUsageRenderTarget);
-    msaaTextureDescriptor->setStorageMode(MTL::StorageModePrivate);
+    msaaTextureDescriptor->setStorageMode(MTL::StorageModePrivate); // to make it work on older device
     
     msaaRenderTargetTexture = metalDevice->newTexture(msaaTextureDescriptor);
     
@@ -258,7 +258,7 @@ void MTLEngine::createDepthAndMSAATextures()
     depthTextureDescriptor->setHeight(metalLayer.drawableSize.height);
     depthTextureDescriptor->setUsage(MTL::TextureUsageRenderTarget);
     depthTextureDescriptor->setSampleCount(sampleCount);
-    depthTextureDescriptor->setStorageMode(MTL::StorageModePrivate);
+    depthTextureDescriptor->setStorageMode(MTL::StorageModePrivate); // to make it work on older device
     
     depthTexture = metalDevice->newTexture(depthTextureDescriptor);
     
@@ -287,9 +287,9 @@ void MTLEngine::createRenderPassDescriptor()
 
 void MTLEngine::updateRenderPassDescriptor()
 {
-    //renderPassDescriptor->colorAttachments()->object(0)->setTexture(msaaRenderTargetTexture);
-    //renderPassDescriptor->colorAttachments()->object(0)->setResolveTexture(metalDrawable->texture());
-    //renderPassDescriptor->depthAttachment()->setTexture(depthTexture);
+    renderPassDescriptor->colorAttachments()->object(0)->setTexture(msaaRenderTargetTexture);
+    renderPassDescriptor->colorAttachments()->object(0)->setResolveTexture(metalDrawable->texture());
+    renderPassDescriptor->depthAttachment()->setTexture(depthTexture);
 }
 
 void MTLEngine::draw()
@@ -311,19 +311,21 @@ void MTLEngine::sendRenderCommand()
     metalCommandBuffer->commit();
     metalCommandBuffer->waitUntilCompleted();
     
-    renderPassDescriptor->release();
+    //renderPassDescriptor->release();
 }
 
 void MTLEngine::encodeRenderCommand(MTL::RenderCommandEncoder *renderCommandEncoder)
 {
     // Move the cube 2 units down the negative z-axis
-    matrix_float4x4 translationMatrix = matrix4x4_translation(0, 0, -1.0);
+    matrix_float4x4 translationMatrix = matrix4x4_translation(0, 0, 0.0);
     
-    float angleInDegrees = glfwGetTime()/2.0 * 45;
+    float angleInDegrees = glfwGetTime()/2.0 * 90;
     float angleInRadians = angleInDegrees * M_PI/ 180.f;
-    matrix_float4x4 rotationMatrix = matrix4x4_rotation(angleInRadians, 0.0, 1.0, 0.0);
+    matrix_float4x4 rotationMatrix = matrix4x4_rotation(angleInRadians, 0.0, -1.0, 0.0);
     
-    matrix_float4x4 modelMatrix = simd_mul(translationMatrix, rotationMatrix);
+    matrix_float4x4 modelMatrix = matrix_identity_float4x4;
+    modelMatrix = simd_mul(translationMatrix, rotationMatrix);
+    
     simd::float3 R = simd::float3{1, 0, 0}; // Unit-Right
     simd::float3 U = simd::float3{0, 1, 0}; // Unit-Up
     simd::float3 F = simd::float3{0, 0, -1}; // Unit-Forward
