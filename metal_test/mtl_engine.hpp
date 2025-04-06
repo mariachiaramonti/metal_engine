@@ -10,13 +10,14 @@
 #include <QuartzCore/CAMetalLayer.hpp>
 #include <QuartzCore/CAMetalLayer.h>
 #include <QuartzCore/QuartzCore.hpp>
-
 #include <simd/simd.h>
+
 #include "VertexData.hpp"
 #include "texture.hpp"
 #include <stb/stb_image.h>
-#include <filesystem>
 #include "AAPLMathUtilities.h"
+#include <iostream>
+#include <filesystem>
 
 class MTLEngine {
 public:
@@ -28,23 +29,26 @@ private:
     void initDevice();
     void initWindow();
     
+    void createSphere(int numLatitudeLines=34, int numLongitudeLines=34);
     void createSquare();
     void createTriangle();
     void createCube();
+    
+    void createLight();
     void createBuffers();
     
     void createDefaultLibrary();
     void createCommandQueue();
     void createRenderPipeline();
+    void createLightSourceRenderPipeline();
     
     void createDepthAndMSAATextures();
     void createRenderPassDescriptor();
-    
     void updateRenderPassDescriptor();
     
-    void encodeRenderCommand(MTL::RenderCommandEncoder* renderEncoder);
-    void sendRenderCommand();
     void draw();
+    void sendRenderCommand();
+    void encodeRenderCommand(MTL::RenderCommandEncoder* renderEncoder);
     
     static void frameBufferSizeCallback(GLFWwindow *window, int width, int height);
     void resizeFrameBuffer(int width, int height);
@@ -59,16 +63,23 @@ private:
     MTL::CommandQueue* metalCommandQueue;
     MTL::CommandBuffer* metalCommandBuffer;
     MTL::RenderPipelineState* metalRenderPS0;
+    MTL::RenderPipelineState* metalLightSourceRenderPS0;
+    MTL::RenderPassDescriptor* renderPassDescriptor;
+    
+    MTL::Buffer* sphereVertexBuffer;
+    MTL::Buffer* lightVertexBuffer;
+    MTL::Buffer* sphereTransformationBuffer;
+    MTL::Buffer* lightTransformationBuffer;
     MTL::Buffer* triangleVertexBuffer;
     MTL::Buffer* squareVertexBuffer;
     MTL::Buffer* cubeVertexBuffer;
     MTL::Buffer* transformationBuffer;
     
-    Texture* grassTexture;
-    
     MTL::DepthStencilState* depthStencilState;
-    MTL::RenderPassDescriptor* renderPassDescriptor;
     MTL::Texture* msaaRenderTargetTexture = nullptr;
     MTL::Texture* depthTexture;
     int sampleCount = 4;
+    NS::UInteger vertexCount = 0;
+    
+    Texture* grassTexture;
 };
