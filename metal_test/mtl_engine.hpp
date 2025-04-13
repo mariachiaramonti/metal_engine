@@ -13,9 +13,12 @@
 #include <simd/simd.h>
 
 #include "VertexData.hpp"
-#include "texture.hpp"
+#include "TextureArray.hpp"
+//#include "texture.hpp"
 #include <stb/stb_image.h>
 #include "AAPLMathUtilities.h"
+#include "mesh.hpp"
+
 #include <iostream>
 #include <filesystem>
 
@@ -29,12 +32,15 @@ private:
     void initDevice();
     void initWindow();
     
+    void loadMeshes();
+    
     void createSphere(int numLatitudeLines=34, int numLongitudeLines=34);
     void createSquare();
     void createTriangle();
     void createCube();
     
     void createLight();
+    
     void createBuffers();
     
     void createDefaultLibrary();
@@ -58,6 +64,8 @@ private:
     NSWindow* metalWindow;
     CAMetalLayer* metalLayer;
     CA::MetalDrawable* metalDrawable;
+    bool windowResizeFlag = false;
+    int newWidth, newHeight;
     
     MTL::Library* metalDefaultLibrary;
     MTL::CommandQueue* metalCommandQueue;
@@ -65,6 +73,8 @@ private:
     MTL::RenderPipelineState* metalRenderPS0;
     MTL::RenderPipelineState* metalLightSourceRenderPS0;
     MTL::RenderPassDescriptor* renderPassDescriptor;
+    
+    Mesh* mesh;
     
     MTL::Buffer* sphereVertexBuffer;
     MTL::Buffer* lightVertexBuffer;

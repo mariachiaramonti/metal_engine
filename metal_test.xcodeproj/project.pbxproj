@@ -19,6 +19,8 @@
 		AD4401652C9456EA00E3004E /* AAPLMathUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD4401632C9456EA00E3004E /* AAPLMathUtilities.cpp */; };
 		AD68C7122DA2FC3C003BE5B0 /* sphere.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7112DA2FC3C003BE5B0 /* sphere.metal */; };
 		AD68C7142DA2FDF4003BE5B0 /* light.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7132DA2FDF4003BE5B0 /* light.metal */; };
+		AD68C7172DAC11B7003BE5B0 /* TextureArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7162DAC11B7003BE5B0 /* TextureArray.cpp */; };
+		AD68C71A2DAC1435003BE5B0 /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7192DAC1435003BE5B0 /* mesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +55,10 @@
 		AD4401642C9456EA00E3004E /* AAPLMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMathUtilities.h; sourceTree = "<group>"; };
 		AD68C7112DA2FC3C003BE5B0 /* sphere.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = sphere.metal; sourceTree = "<group>"; };
 		AD68C7132DA2FDF4003BE5B0 /* light.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = light.metal; sourceTree = "<group>"; };
+		AD68C7152DAC110E003BE5B0 /* TextureArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureArray.hpp; sourceTree = "<group>"; };
+		AD68C7162DAC11B7003BE5B0 /* TextureArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureArray.cpp; sourceTree = "<group>"; };
+		AD68C7182DAC1435003BE5B0 /* mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
+		AD68C7192DAC1435003BE5B0 /* mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
 		AD7A24462C5ED8C800E26684 /* metal_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_test.entitlements; sourceTree = "<group>"; };
 		ADE61D092C7200C000AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
 		ADE61D0B2C7203AA00AF7398 /* stbi_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stbi_image.cpp; path = external/stb/stbi_image.cpp; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 		AD137CC92C5EB4EA00E750BA /* metal_test */ = {
 			isa = PBXGroup;
 			children = (
+				AD68C7152DAC110E003BE5B0 /* TextureArray.hpp */,
 				AD4401632C9456EA00E3004E /* AAPLMathUtilities.cpp */,
 				AD4401642C9456EA00E3004E /* AAPLMathUtilities.h */,
 				AD44015B2C8B6DF800E3004E /* texture.cpp */,
@@ -111,6 +118,9 @@
 				AD44015E2C8B717E00E3004E /* VertexData.hpp */,
 				AD68C7112DA2FC3C003BE5B0 /* sphere.metal */,
 				AD68C7132DA2FDF4003BE5B0 /* light.metal */,
+				AD68C7162DAC11B7003BE5B0 /* TextureArray.cpp */,
+				AD68C7182DAC1435003BE5B0 /* mesh.hpp */,
+				AD68C7192DAC1435003BE5B0 /* mesh.cpp */,
 			);
 			path = metal_test;
 			sourceTree = "<group>";
@@ -209,12 +219,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD68C7122DA2FC3C003BE5B0 /* sphere.metal in Sources */,
+				AD68C7172DAC11B7003BE5B0 /* TextureArray.cpp in Sources */,
 				AD44015D2C8B6E1100E3004E /* stbi_image.cpp in Sources */,
 				AD4401652C9456EA00E3004E /* AAPLMathUtilities.cpp in Sources */,
 				AD137CCB2C5EB4EA00E750BA /* main.mm in Sources */,
 				AD68C7142DA2FDF4003BE5B0 /* light.metal in Sources */,
 				AD44015C2C8B6DF800E3004E /* texture.cpp in Sources */,
 				AD137CD92C5EB5D100E750BA /* mtl_implementation.cpp in Sources */,
+				AD68C71A2DAC1435003BE5B0 /* mesh.cpp in Sources */,
 				AD137CDD2C5EBA3F00E750BA /* mtl_engine.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
