@@ -20,7 +20,6 @@
 		AD68C7172DAC11B7003BE5B0 /* TextureArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7162DAC11B7003BE5B0 /* TextureArray.cpp */; };
 		AD68C71A2DAC1435003BE5B0 /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7192DAC1435003BE5B0 /* mesh.cpp */; };
 		AD68C7242DB5383A003BE5B0 /* tiny_obj_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7232DB5383A003BE5B0 /* tiny_obj_loader.cpp */; };
-		AD68C7282DB5386E003BE5B0 /* tiny_obj_loader 2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7272DB5386E003BE5B0 /* tiny_obj_loader 2.cpp */; };
 		AD68C72A2DB54281003BE5B0 /* light.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD68C7292DB54281003BE5B0 /* light.metal */; };
 		AD68C72C2DB5431E003BE5B0 /* model.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD68C72B2DB5431E003BE5B0 /* model.metal */; };
 /* End PBXBuildFile section */
@@ -220,7 +219,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD68C7282DB5386E003BE5B0 /* tiny_obj_loader 2.cpp in Sources */,
 				AD68C72C2DB5431E003BE5B0 /* model.metal in Sources */,
 				AD68C7242DB5383A003BE5B0 /* tiny_obj_loader.cpp in Sources */,
 				AD68C7172DAC11B7003BE5B0 /* TextureArray.cpp in Sources */,
