@@ -91,5 +91,5 @@ private:
     int sampleCount = 4;
     NS::UInteger vertexCount = 0;
     
-    Texture* grassTexture;
+    //Texture* grassTexture;
 };

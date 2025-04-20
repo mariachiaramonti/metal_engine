@@ -13,14 +13,14 @@ using namespace simd;
 #include <vector>
 #include <string>
 
-#include <tiny_obj_loader.h>
+#include <tinyobjloader/tiny_obj_loader.h>
 #include "VertexData.hpp"
 #include "TextureArray.hpp"
 
 inline bool operator==(const Vertex& lhs, const Vertex& rhs)
 {
     return lhs.position.x == rhs.position.x &&
-        lsh.position.y == rhs.position.y &&
+        lhs.position.y == rhs.position.y &&
         lhs.position.z == rhs.position.z &&
         lhs.normal.x == rhs.normal.x &&
         lhs.normal.y == rhs.normal.y &&
