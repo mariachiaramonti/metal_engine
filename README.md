@@ -1,5 +1,5 @@
 ## macOS Metal Rendering Engine
-A Metal C++ renderer following https://metaltutorial.com/ to learn the basics of Metal with metal-cpp.
+A Metal C++ renderer following https://metaltutorial.com/ to learn the basics of Metal with [metal-cpp](https://developer.apple.com/metal/cpp/).
 
 ### Latest update
 Loading models with [tinyobjloader](https://github.com/tinyobjloader/tinyobjloader), rendering with Blinn-Phong shading:
